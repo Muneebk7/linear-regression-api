@@ -1,3 +1,4 @@
+
 pipeline {
     agent any
 
@@ -9,8 +10,8 @@ pipeline {
         stage('Build and Deploy') {
             steps {
                 checkout scm
-                sh 'docker compose down || true'
-                sh 'docker compose up -d'
+                sh 'docker-compose down || true'
+                sh 'docker-compose up -d'
             }
         }
     }
